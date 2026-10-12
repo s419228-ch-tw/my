@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳寬 - 個人學習歷程檔案與作品集 | 新北市立三重商工資料處理科</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastel: {
+                            bg: '#F8F9FA',
+                            card: '#FFFFFF',
+                            primary: '#6B8E9B', // Muted Teal/Blue
+                            primaryHover: '#56737E',
+                            secondary: '#E8EFF2', // Light Slate Blue
+                            accent: '#D98A6C', // Soft Terracotta
+                            text: '#2B3A42',
+                            muted: '#6C7A89',
+                            highlight: '#F3EFE0', // Soft Cream
+                            border: '#E2E8F0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #F4F6F8;
+            color: #2B3A42;
+        }
+        
+        .nav-active {
+            color: #6B8E9B !important;
+            font-weight: 700;
+            border-bottom: 3px solid #6B8E9B;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 20px -2px rgba(107, 142, 155, 0.08);
+        }
+
+        .reflection-num {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, #6B8E9B 0%, #D98A6C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F1F1F1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-pastel-bg text-pastel-text antialiased selection:bg-pastel-primary selection:text-white">
+
+    <!-- Floating Header Navigation -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-pastel-border shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo / Name -->
+                <div class="flex-shrink-0 flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-pastel-primary text-white flex items-center justify-center font-bold text-lg shadow-inner">
+                        寬
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg text-pastel-text block leading-tight">陳寬</span>
+                        <span class="text-xs text-pastel-muted block">三重商工 · 資料處理科</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link px-3 py-2 text-sm font-medium text-pastel-muted hover:text-pastel-primary transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-user-gear text-xs"></i> 關於我
+                    </a>
+                    <a href="#study-plan" class="nav-link px-3 py-2 text-sm font-medium text-pastel-muted hover:text-pastel-primary transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye text-xs"></i> 讀書計畫
+                    </a>
+                    <a href="#portfolio" class="nav-link px-3 py-2 text-sm font-medium text-pastel-muted hover:text-pastel-primary transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-folder-open text-xs"></i> 作品集與檢定
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-pastel-muted hover:text-pastel-primary focus:outline-none p-2 rounded-md">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-pastel-border px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-pastel-text hover:bg-pastel-secondary">
+                <i class="fa-solid fa-user-gear mr-2 text-pastel-primary"></i> 關於我
+            </a>
+            <a href="#study-plan" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-pastel-text hover:bg-pastel-secondary">
+                <i class="fa-solid fa-bullseye mr-2 text-pastel-primary"></i> 讀書計畫
+            </a>
+            <a href="#portfolio" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-pastel-text hover:bg-pastel-secondary">
+                <i class="fa-solid fa-folder-open mr-2 text-pastel-primary"></i> 作品集與檢定
+            </a>
+        </div>
+    </header>
+
+    <section class="pt-28 pb-12 bg-gradient-to-b from-pastel-secondary/50 via-pastel-bg to-pastel-bg border-b border-pastel-border/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="space-y-4 max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pastel-highlight border border-pastel-accent/20 text-pastel-accent text-xs font-semibold">
+                        <i class="fa-solid fa-graduation-cap"></i> 學習歷程檔案 / 多元學習綜整
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-pastel-text tracking-tight">
+                        歡迎來到 <span class="text-pastel-primary">陳寬</span> 的個人學習歷程網站
+                    </h1>
+                    <p class="text-pastel-muted text-base leading-relaxed">
+                        現就讀於 <strong class="text-pastel-text">新北市立三重商工 資料處理科</strong>。專注於會計事務與資訊應用領域，擁有堅實的實務檢定經驗，秉持「理解勝於記憶」的學習態度持續邁進。
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+                        <a href="#portfolio" class="px-5 py-2.5 bg-pastel-primary hover:bg-pastel-primaryHover text-white font-medium text-sm rounded-lg shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-award"></i> 查看檢定成果
+                        </a>
+                        <a href="#about" class="px-5 py-2.5 bg-white hover:bg-gray-50 text-pastel-text font-medium text-sm rounded-lg border border-pastel-border shadow-sm transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-address-card"></i> 個人經歷簡介
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Decorative Card -->
+                <div class="w-full md:w-auto flex justify-center">
+                    <div class="glass-card p-6 rounded-2xl border border-pastel-border w-72 text-center relative overflow-hidden shadow-sm">
+                        <div class="absolute -top-10 -right-10 w-28 h-28 bg-pastel-primary/10 rounded-full blur-2xl"></div>
+                        <img src="https://placehold.co/120x120/6B8E9B/FFFFFF?text=%E9%99%B3%EAF" alt="陳寬大頭照" class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-white shadow-sm object-cover" onerror="this.src='https://placehold.co/120x120/6B8E9B/FFFFFF?text=Photo'">
+                        <h3 class="font-bold text-lg text-pastel-text">陳寬</h3>
+                        <p class="text-xs text-pastel-primary font-medium mb-3">三重商工 · 資處科</p>
+                        <div class="flex justify-center gap-2 flex-wrap">
+                            <span class="px-2 py-1 bg-pastel-secondary text-pastel-primary text-xs rounded-md">會計資訊 乙級</span>
+                            <span class="px-2 py-1 bg-pastel-secondary text-pastel-primary text-xs rounded-md">事務股長</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="w-2 h-8 bg-pastel-primary rounded-full"></div>
+            <h2 class="text-2xl font-bold text-pastel-text">關於我 (About Me)</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Side: Basic Info Card (Inspired by Reference Image 2 Style) -->
+            <div class="lg:col-span-1 glass-card p-6 rounded-2xl border border-pastel-border space-y-6">
+                <!-- Header Title block -->
+                <div class="border-b border-pastel-border pb-4">
+                    <span class="text-xs font-bold text-pastel-primary tracking-wider uppercase">INTRODUCE</span>
+                    <h3 class="text-xl font-bold text-pastel-text mt-1">基本資料</h3>
+                </div>
+
+                <!-- Info List -->
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-pastel-secondary flex items-center justify-center text-pastel-primary">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-pastel-muted">就讀學校</p>
+                            <p class="font-medium text-pastel-text">新北市立三重商工</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-pastel-secondary flex items-center justify-center text-pastel-primary">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-pastel-muted">就讀科系</p>
+                            <p class="font-medium text-pastel-text">資料處理科</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-pastel-secondary flex items-center justify-center text-pastel-primary">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-pastel-muted">班級幹部</p>
+                            <p class="font-medium text-pastel-text">高一上學期 事務股長</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interests Tags -->
+                <div class="pt-4 border-t border-pastel-border">
+                    <h4 class="text-xs font-bold text-pastel-muted uppercase tracking-wider mb-3">個人興趣 (Interests)</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-pastel-highlight text-pastel-text rounded-lg text-xs font-medium flex items-center gap-1.5">
+                            <i class="fa-solid fa-book-open text-pastel-accent"></i> 閱讀
+                        </span>
+                        <span class="px-3 py-1.5 bg-pastel-highlight text-pastel-text rounded-lg text-xs font-medium flex items-center gap-1.5">
+                            <i class="fa-solid fa-calculator text-pastel-primary"></i> 會計
+                        </span>
+                        <span class="px-3 py-1.5 bg-pastel-highlight text-pastel-text rounded-lg text-xs font-medium flex items-center gap-1.5">
+                            <i class="fa-solid fa-music text-pastel-accent"></i> 聽音樂
+                        </span>
+                        <span class="px-3 py-1.5 bg-pastel-highlight text-pastel-text rounded-lg text-xs font-medium flex items-center gap-1.5">
+                            <i class="fa-solid fa-pen-nib text-pastel-primary"></i> 閱讀心得競賽
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Badges Summary -->
+                <div class="pt-4 border-t border-pastel-border">
+                    <h4 class="text-xs font-bold text-pastel-muted uppercase tracking-wider mb-3">專業證照總覽</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li class="flex items-center justify-between p-2 bg-pastel-bg rounded-md">
+                            <span>會計事務-資訊 乙級</span>
+                            <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 font-semibold rounded">通過</span>
+                        </li>
+                        <li class="flex items-center justify-between p-2 bg-pastel-bg rounded-md">
+                            <span>會計事務-人工記帳 丙級</span>
+                            <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 font-semibold rounded">通過</span>
+                        </li>
+                        <li class="flex items-center justify-between p-2 bg-pastel-bg rounded-md">
+                            <span>會計事務-資訊 丙級</span>
+                            <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 font-semibold rounded">通過</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Side: Learning Story and Trait Showcase -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Self Description Box -->
+                <div class="glass-card p-6 rounded-2xl border border-pastel-border">
+                    <h3 class="text-lg font-bold text-pastel-text mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-heart-pulse text-pastel-accent"></i> 學習特質與個人簡述
+                    </h3>
+                    <p class="text-pastel-muted text-sm leading-relaxed mb-4">
+                        我是陳寬，就讀於三重商工資料處理科。對於商業邏輯與資訊應用的結合深感興趣，尤其在「會計學」及「電腦資訊處理」領域投入許多心力。高一上學期擔任事務股長期間，培養了負責任、細心處事與團隊協調的能力。
+                    </p>
+                    <p class="text-pastel-muted text-sm leading-relaxed">
+                        課餘時間我熱愛閱讀與音樂，並積極將閱讀累積的思考習慣轉化為文字，參加全校及跨校閱讀心得競賽。我相信嚴謹的會計邏輯與靈活的資訊能力是我最大的優勢。
+                    </p>
+                </div>
+
+                <!-- Key Competencies Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-5 bg-white rounded-xl border border-pastel-border shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-lg bg-pastel-secondary text-pastel-primary flex items-center justify-center text-lg font-bold mb-3">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <h4 class="font-bold text-pastel-text text-base mb-1">細心負責的幹部經驗</h4>
+                        <p class="text-xs text-pastel-muted leading-relaxed">
+                            擔任高一上事務股長，負責班級設備維護與公務採購，展現出高度責任感與條理分明的管理能力。
+                        </p>
+                    </div>
+
+                    <div class="p-5 bg-white rounded-xl border border-pastel-border shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-lg bg-pastel-highlight text-pastel-accent flex items-center justify-center text-lg font-bold mb-3">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h4 class="font-bold text-pastel-text text-base mb-1">邏輯內化與自主學習</h4>
+                        <p class="text-xs text-pastel-muted leading-relaxed">
+                            面對會計乙丙級檢定，強調「理解原理勝於死記」，透過製作重點筆記與試題分析持續改進學習方法。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="study-plan" class="py-16 bg-white/60 border-y border-pastel-border/60 scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-2 h-8 bg-pastel-accent rounded-full"></div>
+                <h2 class="text-2xl font-bold text-pastel-text">讀書計畫 (Study Plan)</h2>
+            </div>
+            <p class="text-xs text-pastel-muted mb-8 ml-5">近、中、遠期學習規劃與目標階段設定</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Short Term -->
+                <div class="glass-card rounded-2xl p-6 border-t-4 border-t-pastel-primary relative">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-2.5 py-1 bg-pastel-secondary text-pastel-primary text-xs font-bold rounded-md">近期目標</span>
+                        <span class="text-xs text-pastel-muted">高一～高二</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-pastel-text mb-3">扎實基礎與檢定突破</h3>
+                    <ul class="space-y-3 text-xs text-pastel-muted">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-pastel-primary mt-0.5"></i>
+                            <span>保持商業概論、會計學及程式設計科目名列前茅。</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-pastel-primary mt-0.5"></i>
+                            <span>完成會計資訊乙級檢定準備並順利取得證照。</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-pastel-primary mt-0.5"></i>
+                            <span>持續參加校內外閱讀心得競賽，訓練文字表達能力。</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mid Term -->
+                <div class="glass-card rounded-2xl p-6 border-t-4 border-t-pastel-accent relative">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-2.5 py-1 bg-amber-100 text-pastel-accent text-xs font-bold rounded-md">中期目標</span>
+                        <span class="text-xs text-pastel-muted">高三統測</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-pastel-text mb-3">統測衝刺與多元表現</h3>
+                    <ul class="space-y-3 text-xs text-pastel-muted">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-pastel-accent mt-0.5"></i>
+                            <span>系統化複習資管與商管專業科目，挑戰理想科技大學。</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-pastel-accent mt-0.5"></i>
+                            <span>彙整三年學習歷程檔案，精緻化呈現專題與檢定成果。</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-pastel-accent mt-0.5"></i>
+                            <span>加強專業英文與商業溝通能力。</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Long Term -->
+                <div class="glass-card rounded-2xl p-6 border-t-4 border-t-emerald-500 relative">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-md">遠期目標</span>
+                        <span class="text-xs text-pastel-muted">大學與未來自我實現</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-pastel-text mb-3">跨域整合與專業深化</h3>
+                    <ul class="space-y-3 text-xs text-pastel-muted">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>深入研讀財務金融與資訊管理跨領域知識（如數據分析、ERP系統）。</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>考取更高階商業與資訊專業認證。</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>投身企業實習，將課堂所學實際應用於實務運作中。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+        <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 bg-pastel-primary rounded-full"></div>
+                <div>
+                    <h2 class="text-2xl font-bold text-pastel-text">作品集與檢定準備過程 (Portfolio & Examination)</h2>
+                    <p class="text-xs text-pastel-muted">參考檢定歷程與成果心得紀錄</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Exam Preparation Process (Directly based on Reference Image 1) -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-pastel-border shadow-sm mb-12">
+            <!-- Header banner -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-pastel-border gap-4">
+                <div>
+                    <span class="text-xs font-bold text-pastel-accent tracking-wider uppercase">CERTIFICATE PREPARATION</span>
+                    <h3 class="text-2xl font-extrabold text-pastel-text">檢定證照歷程：會計事務-資訊 乙級</h3>
+                </div>
+                <div class="px-4 py-2 bg-pastel-highlight rounded-xl border border-pastel-accent/30 text-right">
+                    <span class="text-xs text-pastel-muted block">準備目標</span>
+                    <span class="text-sm font-bold text-pastel-accent">會計事務-資訊 乙級 / 丙級</span>
+                </div>
+            </div>
+
+            <!-- 3 Process Cards (題組練習 / 發現盲點 / 方法調整) -->
+            <div class="mt-8">
+                <h4 class="text-lg font-bold text-pastel-text mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-compass text-pastel-primary"></i> 準備過程 (Preparation Steps)
+                </h4>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Step 1 -->
+                    <div class="p-5 rounded-xl bg-pastel-bg border border-pastel-border flex flex-col justify-between">
+                        <div>
+                            <div class="w-full py-2 bg-white border border-pastel-border rounded-lg text-center font-bold text-pastel-text mb-3 shadow-xs">
+                                題組練習
+                            </div>
+                            <p class="text-xs text-pastel-muted leading-relaxed">
+                                剛開始我會練習一遍每個題組，讓自己先有一個概念與整體輪廓，熟悉各種題目型態與操作流程。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-pastel-border/60 text-right">
+                            <span class="text-[10px] text-pastel-primary font-medium">階段一：建立概念</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="p-5 rounded-xl bg-pastel-bg border border-pastel-border flex flex-col justify-between">
+                        <div>
+                            <div class="w-full py-2 bg-white border border-pastel-border rounded-lg text-center font-bold text-pastel-text mb-3 shadow-xs">
+                                發現盲點
+                            </div>
+                            <p class="text-xs text-pastel-muted leading-relaxed">
+                                像 Excel 函數、會計分錄等，如果只靠背誦，在實際操作時容易忘記或出錯，無法真正了解運作原理。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-pastel-border/60 text-right">
+                            <span class="text-[10px] text-pastel-accent font-medium">階段二：檢視問題</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="p-5 rounded-xl bg-pastel-bg border border-pastel-border flex flex-col justify-between">
+                        <div>
+                            <div class="w-full py-2 bg-white border border-pastel-border rounded-lg text-center font-bold text-pastel-text mb-3 shadow-xs">
+                                方法調整
+                            </div>
+                            <p class="text-xs text-pastel-muted leading-relaxed">
+                                我開始將每個題組的重點整理起來，當作考前提醒，並透過反覆理解與練習，提高操作熟練度。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-pastel-border/60 text-right">
+                            <span class="text-[10px] text-emerald-600 font-medium">階段三：強化優化</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes Placeholders (Inspired by photo placeholders in Ref Image 1) -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-pastel-bg p-4 rounded-xl border border-pastel-border text-center">
+                    <div class="h-40 bg-gray-200 rounded-lg flex flex-col items-center justify-center border border-dashed border-gray-400 mb-2 overflow-hidden">
+                        <i class="fa-solid fa-book-open-reader text-3xl text-gray-400 mb-1"></i>
+                        <span class="text-xs text-gray-500">学科重點筆記照片區塊</span>
+                    </div>
+                    <p class="text-xs font-bold text-pastel-text">▲ 學科重點筆記</p>
+                </div>
+
+                <div class="bg-pastel-bg p-4 rounded-xl border border-pastel-border text-center">
+                    <div class="h-40 bg-gray-200 rounded-lg flex flex-col items-center justify-center border border-dashed border-gray-400 mb-2 overflow-hidden">
+                        <i class="fa-solid fa-file-lines text-3xl text-gray-400 mb-1"></i>
+                        <span class="text-xs text-gray-500">術科考前重點整理清單區塊</span>
+                    </div>
+                    <p class="text-xs font-bold text-pastel-text">▲ 術科考前重點整理</p>
+                </div>
+            </div>
+
+            <!-- Self Reflection (自我省思 1, 2, 3 from Reference Image 1) -->
+            <div class="mt-10 pt-8 border-t border-pastel-border">
+                <h4 class="text-xl font-bold text-pastel-text mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-lightbulb text-amber-500"></i> 自我省思 (Self Reflection)
+                </h4>
+
+                <div class="space-y-6">
+                    <!-- Point 1 -->
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-pastel-highlight/50 border border-pastel-accent/20">
+                        <div class="reflection-num">1.</div>
+                        <div>
+                            <h5 class="text-base font-bold text-pastel-text">理解勝於記憶：真正的學習在於內化</h5>
+                            <p class="text-xs text-pastel-muted mt-1 leading-relaxed">
+                                死背可能短期有用，但只有理解背後的原理，才能真正學會並靈活運用在各種題型變化中。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Point 2 -->
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-pastel-highlight/50 border border-pastel-accent/20">
+                        <div class="reflection-num">2.</div>
+                        <div>
+                            <h5 class="text-base font-bold text-pastel-text">錯誤是成長的養分</h5>
+                            <p class="text-xs text-pastel-muted mt-1 leading-relaxed">
+                                從錯誤題目中檢討與歸納，讓我更清楚自己的弱點，這比盲目刷題更有效率。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-pastel-highlight/50 border border-pastel-accent/20">
+                        <div class="reflection-num">3.</div>
+                        <div>
+                            <h5 class="text-base font-bold text-pastel-text">建立信心來自過程的累積</h5>
+                            <p class="text-xs text-pastel-muted mt-1 leading-relaxed">
+                                當我熟練題目與操作細節後，看見自己的進步與信心，這些經驗也將成為我未來面對新挑戰的基石。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Diverse Learning & Competitions (Inspired by Reference Image 2) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Reading Contest Card -->
+            <div class="glass-card p-6 rounded-2xl border border-pastel-border">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-pastel-secondary text-pastel-primary flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base text-pastel-text">閱讀心得競賽作品展示</h3>
+                        <p class="text-xs text-pastel-muted">興趣延伸與文字創作表現</p>
+                    </div>
+                </div>
+                <p class="text-xs text-pastel-muted leading-relaxed mb-4">
+                    平常喜愛閱讀商業書籍與人文哲理，並多次投稿高中生閱讀心得競賽，訓練邏輯歸納與文字表達能力。
+                </p>
+                <div class="p-3 bg-pastel-bg rounded-lg border border-pastel-border text-xs space-y-2">
+                    <div class="flex justify-between font-medium text-pastel-text">
+                        <span>《商業思考與會計邏輯》心得分享</span>
+                        <span class="text-pastel-accent">校內優等</span>
+                    </div>
+                    <p class="text-[11px] text-pastel-muted">
+                        探討會計數字背後的商業決策脈絡，理解會計不僅是紀錄，更是企業溝通的語言。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Certificate List Card -->
+            <div class="glass-card p-6 rounded-2xl border border-pastel-border">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-pastel-highlight text-pastel-accent flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base text-pastel-text">技術證照與榮譽清單</h3>
+                        <p class="text-xs text-pastel-muted">多元能力累積</p>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex items-center justify-between p-2 rounded bg-white border border-pastel-border">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i> 會計事務-資訊 乙級證照
+                        </span>
+                        <span class="text-[11px] text-pastel-muted">國家級證照</span>
+                    </li>
+                    <li class="flex items-center justify-between p-2 rounded bg-white border border-pastel-border">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i> 會計事務-人工記帳 丙級證照
+                        </span>
+                        <span class="text-[11px] text-pastel-muted">國家級證照</span>
+                    </li>
+                    <li class="flex items-center justify-between p-2 rounded bg-white border border-pastel-border">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i> 會計事務-資訊 丙級證照
+                        </span>
+                        <span class="text-[11px] text-pastel-muted">國家級證照</span>
+                    </li>
+                    <li class="flex items-center justify-between p-2 rounded bg-white border border-pastel-border">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-award text-amber-500"></i> 高一上學期 班級事務股長
+                        </span>
+                        <span class="text-[11px] text-pastel-muted">幹部服務認證</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-pastel-border py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-sm font-bold text-pastel-text">陳寬 · 個人學習歷程檔案網站</p>
+            <p class="text-xs text-pastel-muted mt-1">新北市立三重商工 資料處理科</p>
+            <p class="text-[11px] text-gray-400 mt-4">© 2026 Chen Kuan. All Rights Reserved. Designed for High School Portfolio.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll Active Link Indicator
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 120;
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('nav-active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
